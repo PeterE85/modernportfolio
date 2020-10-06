@@ -1,0 +1,67 @@
+01. PREPARACION DEL PROYECTO VSCODE SASS y MAS
+
+\\\\en vscode cuando comienzas un proyeceto y kieres integrar los paquetes
+pones
+npm init = te va a preg muchas cosas a todos lo dices k si
+te crea un archivo package.json
+entonces en la consola pondemos 
+
+npm i node-sass para k nos lo instale en el proyecto
+
+nos crea una carpeta node_modules y un archivo packge-loco.json
+cada vez k instalamos algo con npm nos lo ponemos en node_modules
+
+en el archivo package.json //ya sale node-sass instalado
+
+OJOOOO dentro del package.json le establezco a scss donde quiero k convierta a css
+
+{
+  "name": "modern_portfolio",
+  "version": "1.0.0",
+  "description": "responsive portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive" //akiiiiii
+  },
+  "author": "Pedro Pinero",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
+ despues que ponga la informacion de sass y donde kiero k ponga el css salvo y voy a la terminal del vscode y pongo
+
+npm run sass // que es este "sass": "node-sass -w scss/ -o dist/css/ 
+
+02. INTEGRAR GIT EN EL PROYECTO
+abro una nueva terminal en el vscode para integrar el GIT
+. lo primero k hago es crear una archivo llamado git ignore es para poner lo k no quiero k git copie cuando haga el control de versiones, pongo en la terminal
+
+touch .gitignore
+
+dentro del gitignore ponemos los archivos k no queremos que vayan al repositorio git
+
+////GIT en la terminal donde creamos el archivo de gitignore
+ponemos
+git init  //para iniciarlo
+git add . //para adicionarlo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
