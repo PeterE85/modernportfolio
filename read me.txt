@@ -43,8 +43,11 @@ dentro del gitignore ponemos los archivos k no queremos que vayan al repositorio
 
 ////GIT en la terminal donde creamos el archivo de gitignore
 ponemos
-git init  //para iniciarlo
+git init  //para iniciarlo nos crea uba carpeta .git oculta
 git add . //para adicionarlo
+git commit -m 'Initial workflow setup' //comenzamos a salvar -m dejamos msg
+
+
 
 
 
