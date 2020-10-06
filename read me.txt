@@ -47,9 +47,23 @@ git init  //para iniciarlo nos crea uba carpeta .git oculta
 git add . //para adicionarlo
 git commit -m 'Initial workflow setup' //comenzamos a salvar -m dejamos msg
 
+.nos  creamos un repositorio en la cuenta nuestra y dentro de el alamos el proyecto asi
 
+git remote add origin https://github.com/PeterE85/modernportfolio.git
+git remote
+git push -u origin master //nos lo mandamos ya para nuestra cuenta git
 
+creo un archivo readme.md
 
+touch readme.md
+
+git status //para ver
+
+hago el commit 
+git commit -m 'Added readme' 
+
+y despues lo subo a mi repositorio
+git push 
 
 
 
