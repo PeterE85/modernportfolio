@@ -67,6 +67,9 @@ git push //para mandar para el website
 git pull // bajo del website
 clone para copiarlo todo del website la primera vez
 
+git commit -am 'change readme' //hacer los commits
+git push origin master	//subirlo al master
+
 
 
 
