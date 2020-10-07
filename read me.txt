@@ -63,7 +63,10 @@ hago el commit
 git commit -m 'Added readme' 
 
 y despues lo subo a mi repositorio
-git push 
+git push //para mandar para el website
+git pull // bajo del website
+clone para copiarlo todo del website la primera vez
+
 
 
 
