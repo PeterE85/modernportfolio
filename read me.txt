@@ -70,10 +70,34 @@ clone para copiarlo todo del website la primera vez
 git commit -am 'change readme' //hacer los commits
 git push origin master	//subirlo al master
 
+//la primera vez k voy a coger de la web de un repositorio es 
+git clone (la direccion donde esta en la web)
 
+//ya las otras veces es 
+git pull
 
+//la primera vez k mando el proyecto para mi repositorio es
+git remote add origin https://github.com/PeterE85/modernportfolio.git
+git remote
+git push -u origin master //nos lo mandamos ya para nuestra cuenta git
 
+//ya despues es 
+git push
 
+============
+ojoooooo
+cada vez k entre al proyecto tengo k volver a enlazar el scss con el css
+
+sass --watch scss:dist/css
+=====================
+box-sizing: border-box; //asi estoy diciendo k todas las propiedades las coja de la caja y asi controlar el ancho
+
+html{
+ box-sizing: border-box;
+}
+*, *:before, *:after{
+ box-sizing: inherit;
+}
 
 
 
