@@ -35,3 +35,104 @@
         }
     }
 }
+
+//Menu Overlay
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden; //oculto menu hasta k le de al boton
+
+    &.show {
+        visibility: visible; //o sea si doy click semuestra
+    }
+
+    &-branding,
+    &-nav {
+        display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        flex-flow: column wrap; //esta es la abreviada
+        align-items: center;
+        justify-content: center; //alineando el menu vertical
+        float: left;
+        width: 50%;
+        height: 100vh; //todo el alto
+        overflow: hidden; //k el texto si es mucho sobresale
+    }
+
+    &-nav {
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 5); //cdo abrimos el nav los 50% del nav abren mas oscuro
+        list-style: none; //kito los puntos
+
+        transform: translate3d(0, -100%, 0); //aki es para k baje en animacion
+        @include easeOut; //aki le incluyo el Transition
+
+        &.show {
+            //Slide Up to bottom
+            transform: translate3d(0, 0, 0);
+        }
+    } 
+
+    //Branding SIde
+    &-branding {
+        background: $primary-color;
+        @include easeOut;
+
+        transform: translate3d(0, 100%, 0);
+        &.show {
+            //Slide to the bottom to up
+            transform: translate3d(0,0,0);
+        }
+
+        .portrait {
+            width: 250px;
+            height: 250px;
+            background: url(../img/MyLogo_Dev_150x150.jpg);
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+        }
+    }
+
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+        &.show {
+            //Slide from right
+            transform: translate3d(0, 0, 0);
+        }
+
+        &.current > a { //todos los hijos directos o sea los A
+            color: $secondary-color;
+        }
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+
+        @include easeOut;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+    
+}
+
+//Delay each nav item slide by 0.2s
+@for $x from 1 through 4 { //un for para los 4 elementos
+    .nav-item:nth-child(#{$x}) { //una animacion para k entre uno detras del otro
+        transition-delay: $x * 0.2s; //el tiempo de entrada d cada uno d los elementos
+    }
+}
