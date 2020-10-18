@@ -43,14 +43,23 @@
         transform: translate3d(100%, 0, 0);
         
         .portrait {
-            background: url('../img/MyLogo_Dev_150x150.jpg') no-repeat;
+            background: url('../img/MyLogo_Dev_150x150_b&w.jpg') no-repeat;
             width: 150px;
             height: 150px;
             background-size: cover;            
         }
     }
-
     
+    .about-info { //aki cambiamos responsive a mediano
+        grid-template-areas: 
+        'bioimage' 
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+        grid-template-columns: 1fr;
+    }
 }
 
 //Smartphones (BIG XL SCREENS)

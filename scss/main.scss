@@ -1,6 +1,6 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
+
 
 *{
     box-sizing: border-box;
@@ -10,7 +10,7 @@ body{
     @include background;
 
     background: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
@@ -18,7 +18,7 @@ body{
 }
 
 //Headings
-h1,h2,h3 {
+h1,h2,h3,h6 {
     margin: 0;
     font-weight: 400;
 
@@ -50,7 +50,10 @@ header{
 
 main{
     padding: 4rem;
-    height: 100%;
+    // height: 100%; //para que el footer no suba
+
+    //OJOOO FOOTER FIJO le damos la altura de la pag y le restamos el tamanho del footer para k se mantenga fijo
+    min-height: calc(100vh - 60px);
 
     .iconos{
         margin-top: 1rem;
@@ -65,15 +68,91 @@ main{
         }
     }
 
-&#home{
-    overflow: hidden;
+    &#home{
+        overflow: hidden;
 
-    h1{
-        margin-top: 20vh;
+        h1{
+            margin-top: 20vh;
+        }
     }
 }
 
 
+//aki hacemos el GRID pagina ABOUT
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: // el template
+    'bioimage bio bio'  //la estructura de la img y el parrafo
+    'job1 job2 job3';    //la estructura de abajo de los 3 parrafos
 
+    grid-template-columns: repeat(3, 1fr); //repita 3 veces
+
+    /*Aki comienzan los hijos*/
+    .bio-image {
+        grid-area: bioimage;
+    
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+    
+    .bio {
+        grid-area: bio;
+    
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+    
+    .job-1 {
+        grid-area: job1;
+    }
+    
+    .job-2 {
+        grid-area: job2;
+    }
+    
+    .job-3 {
+        grid-area: job3;
+    }
+    
+    .job {
+        background: lighten($primary-color, 5); /*luminosidad */
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+        margin-top: 1rem;
+    
+        h3 {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 1.5rem;
+            
+            &:hover {
+                @include easeOut;
+                color: $secondary-color;
+            }
+        }
+    
+        h6 {
+            font-size: 1.2rem;
+            padding: .5rem;
+        }
+    
+        p {
+            text-align: justify;
+            padding: 0 .5rem;
+        }
+    }
 }
+
+#main-footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+@import 'mobile';
+
 
